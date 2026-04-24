@@ -3,7 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Estudio Jazmín | Cortes y Estilo</title>
+    <meta name="description" content="Estudio Jazmín. Atención personalizada, cortes en tendencia y el mejor ambiente en Tijuana, B.C.">
+    <meta property="og:title" content="Estudio Jazmín | Agenda tu cita">
+    <meta property="og:description" content="Renueva tu estilo con los mejores cortes y atención en Tijuana.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
+    <meta property="og:url" content="https://tu-usuario.github.io/tu-repositorio/">
+    
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/3050/3050244.png">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,13 +23,14 @@
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#galeria">Galería</a></li>
                 <li><a href="#contacto">Contacto</a></li>
                 <li><a href="https://wa.me/5216643546699?text=Hola%20Jazmín,%20vengo%20de%20tu%20página%20web%20y%20me%20gustaría%20agendar%20una%20cita." target="_blank" rel="noopener noreferrer" class="btn-reservar">Agendar Cita</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="inicio" class="hero">
+    <section id="inicio" class="hero fade-in">
         <div class="hero-content">
             <h1>Renueva tu estilo con Jazmín</h1>
             <p>Atención personalizada, cortes en tendencia y el mejor ambiente de la ciudad.</p>
@@ -33,26 +43,53 @@
         <div class="services-grid">
             
             <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Corte de Cabello">
+                <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Corte Moderno">
                 <h3>Corte Moderno</h3>
                 <p>Asesoramiento de imagen y corte adaptado a tus facciones.</p>
                 <span class="price">$350 MXN</span>
             </div>
 
             <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Arreglo de Barba">
+                <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Diseño de Barba">
                 <h3>Diseño de Barba</h3>
                 <p>Alineación perfecta, toalla caliente y productos de primera.</p>
                 <span class="price">$200 MXN</span>
             </div>
 
             <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Paquete Completo">
+                <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Paquete VIP">
                 <h3>Paquete VIP</h3>
                 <p>Corte, diseño de barba, limpieza facial y mascarilla.</p>
                 <span class="price">$500 MXN</span>
             </div>
 
+        </div>
+    </section>
+
+    <section id="galeria" class="gallery">
+        <h2>Mi Trabajo</h2>
+        <p class="gallery-subtitle">Conoce algunos de mis estilos favoritos.</p>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Trabajo 1"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Trabajo 2"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Trabajo 3"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Trabajo 4"></div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2>Lo que dicen mis clientes</h2>
+        <div class="testimo-grid">
+            <div class="testimo-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"Jazmín es una excelente profesional. El degradado que me hizo quedó perfecto. Definitivamente regreso."</p>
+                <h4>- Carlos M.</h4>
+            </div>
+            <div class="testimo-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"Me encantó el servicio VIP. El lugar es muy limpio, cómodo y el masaje facial vale cada peso."</p>
+                <h4>- Roberto G.</h4>
+            </div>
         </div>
     </section>
 
@@ -76,10 +113,18 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 Estudio Jazmín. Todos los derechos reservados.</p>
+        <div class="social-links">
+            <a href="#" target="_blank" title="Instagram">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#" target="_blank" title="Facebook">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+        </div>
+        <p>© 2026 Estudio Jazmín. Todos los derechos reservados.</p>
     </footer>
 
-    <a href="https://wa.me/5216643546699?text=Hola%20Jazmín,%20estoy%20en%20tu%20página%20web%20y%20quiero%20información%20sobre%20tus%20servicios." class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="Contáctame por WhatsApp">
+    <a href="https://wa.me/5216643546699?text=Hola%20Jazmín,%20estoy%20en%20tu%20página%20web%20y%20quiero%20información%20sobre%20tus%20servicios." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="35" height="35">
     </a>
 

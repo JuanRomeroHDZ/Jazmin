@@ -15,7 +15,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Para que al darle click al menú baje suavemente */
 }
 
 body {
@@ -25,19 +25,33 @@ body {
 }
 
 /* =========================================
-   ENCABEZADO Y NAVEGACIÓN
+   ANIMACIONES BÁSICAS
+========================================= */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 1.5s ease forwards;
+}
+
+/* =========================================
+   ENCABEZADO Y NAVEGACIÓN (Efecto Cristal)
 ========================================= */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
-    background-color: rgba(18, 18, 18, 0.95);
+    padding: 15px 50px;
+    background-color: rgba(18, 18, 18, 0.85); /* Semi-transparente */
+    backdrop-filter: blur(10px); /* Efecto esmerilado/blur */
+    -webkit-backdrop-filter: blur(10px);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .logo {
@@ -154,11 +168,12 @@ nav a:hover {
     overflow: hidden;
     padding-bottom: 20px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .service-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2); /* Sombra dorada tenue */
 }
 
 .service-card img {
@@ -185,6 +200,97 @@ nav a:hover {
     font-size: 1.3rem;
     font-weight: bold;
     color: var(--gold);
+}
+
+/* =========================================
+   NUEVO: SECCIÓN GALERÍA
+========================================= */
+.gallery {
+    padding: 60px 50px;
+    text-align: center;
+    background-color: #0f0f0f; /* Un tono ligerísimamente más oscuro */
+}
+
+.gallery h2 {
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.gallery-subtitle {
+    color: var(--text-muted);
+    margin-bottom: 40px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    border-radius: 10px;
+    overflow: hidden;
+    height: 250px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* Efecto zoom al hacer hover */
+}
+
+/* =========================================
+   NUEVO: SECCIÓN TESTIMONIOS
+========================================= */
+.testimonials {
+    padding: 80px 50px;
+    text-align: center;
+    background-color: var(--bg-dark);
+}
+
+.testimonials h2 {
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 40px;
+}
+
+.testimo-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.testimo-card {
+    background-color: var(--bg-card);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 400px;
+    border-left: 4px solid var(--gold);
+    text-align: left;
+}
+
+.testimo-card .stars {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.testimo-card p {
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.testimo-card h4 {
+    color: var(--text-light);
 }
 
 /* =========================================
@@ -252,18 +358,35 @@ nav a:hover {
 }
 
 /* =========================================
-   FOOTER
+   FOOTER Y REDES SOCIALES
 ========================================= */
 footer {
     text-align: center;
-    padding: 25px;
+    padding: 30px 20px;
     background-color: #0a0a0a;
     color: var(--text-muted);
     border-top: 1px solid #333;
 }
 
+.social-links {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    color: var(--text-muted);
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--gold);
+    transform: translateY(-3px);
+}
+
 /* =========================================
-   BOTÓN FLOTANTE DE WHATSAPP
+   BOTÓN FLOTANTE DE WHATSAPP (Con Tooltip)
 ========================================= */
 .whatsapp-float {
     position: fixed;
@@ -283,8 +406,32 @@ footer {
     transition: transform 0.3s ease;
 }
 
+/* El mensajito que sale a un lado (Burbuja) */
+.whatsapp-float::before {
+    content: "¡Agenda tu cita!";
+    position: absolute;
+    right: 75px; /* Distancia del botón */
+    background: #ffffff;
+    color: #121212;
+    padding: 8px 12px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateX(10px);
+}
+
 .whatsapp-float:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+}
+
+.whatsapp-float:hover::before {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 /* =========================================
@@ -300,22 +447,23 @@ footer {
     nav ul {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 15px;
+        gap: 10px;
     }
 
     .hero-content h1 {
         font-size: 2.5rem;
     }
 
-    .services {
-        padding: 60px 20px;
-    }
-    
-    .contact {
+    .services, .gallery, .testimonials, .contact {
         padding: 60px 20px;
     }
 
     .contact-container {
         flex-direction: column;
+    }
+    
+    /* En móvil la burbuja de WA puede estorbar, mejor la ocultamos */
+    .whatsapp-float::before {
+        display: none; 
     }
 }
